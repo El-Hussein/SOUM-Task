@@ -13,6 +13,33 @@
       "@screens/*": [
         "src/screens/*"
       ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@app-types": [
+        "./src/state/types"
+      ],
+      "@app-types/*": [
+        "./src/state/types/*"
+      ],
+      "@actions": [
+        "./src/state/actions"
+      ],
+      "@actions/*": [
+        "./src/state/actions/*"
+      ],
+      "@services": [
+        "./src/state/services"
+      ],
+      "@services/*": [
+        "./src/state/services/*"
+      ],
+      "@selectors": [
+        "./src/state/selectors"
+      ],
+      "@selectors/*": [
+        "./src/state/selectors/*"
+      ],
     }
   }
 }
