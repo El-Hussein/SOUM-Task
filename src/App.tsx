@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {NavigationContainer} from '@react-navigation/native';
-import MainApp from './navigation/MainApp';
+import MainApp from './navigation/mainApp';
 
 function App(): JSX.Element {
   return (
