@@ -8,6 +8,7 @@ function MainApp() {
   return (
     <Stack.Navigator initialRouteName="Home">
       <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="ProductDetails" component={HomeScreen} />
     </Stack.Navigator>
   );
 }
