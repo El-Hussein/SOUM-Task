@@ -1,21 +1,15 @@
-import {
-  GetBrandsHTTPErrorResponse,
-  GetBrandsHTTPSuccessResponse,
-} from '@app-types';
-import { makeGetRequest } from '@utils/api.helpers';
+import {getBrandsAPIData} from '@__mocks__/getBrandsAPI';
+import {GetBrandsAPI} from '@app-types';
+import {makeGetRequest} from '@utils/api.helpers';
 
-export const getBrandsAPI = ({
-  filters,
-}: {
-  filters: {
-    brandIds: number[];
-  };
-}): Promise<GetBrandsHTTPSuccessResponse | GetBrandsHTTPErrorResponse> => {
-  let url = 'buyer/api/brands?';
-  filters.brandIds.forEach((brandId) => {
-    url += `brandIds[]=${brandId}&`;
+export const getBrandsAPI: GetBrandsAPI = categoryId => {
+  // let url = `api/brands?category_id=${categoryId}`;
+  // return makeGetRequest({
+  //   url,
+  // }).then(res => res.data);
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve({data: getBrandsAPIData(categoryId)});
+    }, 1000);
   });
-  return makeGetRequest({
-    url,
-  }).then((res) => res.data);
 };

@@ -1,4 +1,4 @@
-import produce from 'immer';
+import {produce} from 'immer';
 
 export function createReducer<IState, IHandlers extends {[key: string]: any}>(
   initialState: IState,

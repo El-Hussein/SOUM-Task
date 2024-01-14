@@ -1,4 +1,4 @@
-import { Category } from '@app-types';
+import {Category} from '@app-types';
 
 export interface GetCategoriesHTTPSuccessResponse {
   data: Category[];
@@ -7,3 +7,7 @@ export interface GetCategoriesHTTPSuccessResponse {
 export interface GetCategoriesHTTPErrorResponse {
   error: any;
 }
+
+export type GetCategoriesAPI = () => Promise<
+  GetCategoriesHTTPSuccessResponse | GetCategoriesHTTPErrorResponse
+>;

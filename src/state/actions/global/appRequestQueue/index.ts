@@ -1,4 +1,4 @@
-import { createActionNew } from '../../../../utils/action.helpers';
+import {createActionHelper} from '../../../../utils/action.helpers';
 import {
   DecrementAppRequestQueueAction,
   IncrementAppRequestQueueAction,
@@ -9,6 +9,6 @@ import {
 } from './ACTION_TYPES';
 
 export const incrementAppRequestQueue: () => IncrementAppRequestQueueAction =
-  createActionNew(INCREMENT_APP_REQUEST_QUEUE);
+  createActionHelper(INCREMENT_APP_REQUEST_QUEUE);
 export const decrementAppRequestQueue: () => DecrementAppRequestQueueAction =
-  createActionNew(DECREMENT_APP_REQUEST_QUEUE);
+  createActionHelper(DECREMENT_APP_REQUEST_QUEUE);

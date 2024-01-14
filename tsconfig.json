@@ -40,6 +40,12 @@
       "@selectors/*": [
         "./src/state/selectors/*"
       ],
+      "@__mocks__/*": [
+        "./src/__mocks__/*"
+      ],
+      "@__mocks__": [
+        "./src/__mocks__"
+      ],
     }
   }
 }

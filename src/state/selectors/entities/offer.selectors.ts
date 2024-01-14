@@ -1,6 +1,6 @@
-import { Offer } from "@app-types";
-import { ReduxState } from "@utils/types";
+import {Offer} from '@app-types';
+import {RootState} from '@app-types/RootState';
 
-export const selectAllOffers = (state: ReduxState): {[id: string]: Offer} => {
-    return state.newState.entities.offers;
+export const selectAllOffers = (state: RootState): {[id: string]: Offer} => {
+  return state.entities.offers;
 };

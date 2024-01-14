@@ -1,13 +1,17 @@
 import React from 'react';
+import {Provider} from 'react-redux';
 
 import {NavigationContainer} from '@react-navigation/native';
 import MainApp from './navigation/mainApp';
+import store from './state/store';
 
 function App(): JSX.Element {
   return (
-    <NavigationContainer>
-      <MainApp />
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <MainApp />
+      </NavigationContainer>
+    </Provider>
   );
 }
 

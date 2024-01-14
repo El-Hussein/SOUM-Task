@@ -15,6 +15,7 @@ module.exports = {
           '@app-types': './src/state/types/',
           '@services': './src/state/services/',
           '@selectors': './src/state/selectors/',
+          '@__mocks__': './src/__mocks__/',
         },
       },
     ],
