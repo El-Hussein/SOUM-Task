@@ -1,23 +1,15 @@
-import {
-  GetCategoriesHTTPErrorResponse,
-  GetCategoriesHTTPSuccessResponse,
-} from '@app-types';
-import { makeGetRequest } from '@utils/api.helpers';
+import {getCategoriesAPIData} from '@__mocks__/getCategoriesAPI';
+import {GetCategoriesAPI} from '@app-types';
+import {makeGetRequest} from '@utils/api.helpers';
 
-export const getCategoriesAPI = ({
-  filters,
-}: {
-  filters?: {
-    categoryIds: number[];
-  };
-}): Promise<
-  GetCategoriesHTTPSuccessResponse | GetCategoriesHTTPErrorResponse
-> => {
-  let url = 'buyer/api/categories?';
-  filters?.categoryIds.forEach((categoryId) => {
-    url += `catagories_ids[]=${categoryId}&`;
+export const getCategoriesAPI: GetCategoriesAPI = () => {
+  // let url = 'buyer/api/categories';
+  // return makeGetRequest({
+  //   url,
+  // }).then((res) => res.data);
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve({data: getCategoriesAPIData()});
+    }, 1000);
   });
-  return makeGetRequest({
-    url,
-  }).then((res) => res.data);
 };

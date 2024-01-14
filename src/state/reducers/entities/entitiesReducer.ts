@@ -6,7 +6,7 @@ const initialState: EntitiesState = {
   categories: {},
   brands: {},
   offers: {},
-  sellers: {},
+  products: {},
 };
 
 export default createReducer(initialState, handlers);

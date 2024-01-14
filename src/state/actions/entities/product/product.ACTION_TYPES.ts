@@ -1,0 +1,1 @@
+export const ON_NEW_PRODUCTS = 'ON_NEW_PRODUCTS';

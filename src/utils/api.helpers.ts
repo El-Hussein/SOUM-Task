@@ -1,11 +1,13 @@
 import axios from 'axios';
 import NetInfo from '@react-native-community/netinfo';
-import { API_URL } from '../../env.json';
-import { CONNECTION_ERROR } from '@constants/STORAGE_KEYS';
-import { retrieveAuthToken } from './Storage';
-import store from '../store';
+import {retrieveAuthToken} from './Storage';
 
-let userToken;
+// should be in env file
+let API_URL = 'SOME_URL';
+
+let userToken: string;
+
+const CONNECTION_ERROR = 'Connection error';
 
 export const makePostRequest = async ({
   url,
@@ -65,15 +67,15 @@ export const makeRequest = async (
       userToken = await retrieveAuthToken();
     if (userToken) {
       config.headers = headers
-        ? { Authorization: `Bearer ${userToken}`, ...headers }
-        : { Authorization: `Bearer ${userToken}` };
+        ? {Authorization: `Bearer ${userToken}`, ...headers}
+        : {Authorization: `Bearer ${userToken}`};
     } else {
-      config.headers = headers ? { ...headers } : null;
+      config.headers = headers ? {...headers} : null;
     }
   }
   config.headers = {
     ...config.headers,
-    Lang: store.getState()?.newState?.user?.user?.userData?.language || 'en',
+    // Lang: store.getState()?.lang || 'en',
   };
   if (params) {
     config.params = params;
@@ -82,12 +84,12 @@ export const makeRequest = async (
     config.data = data;
   }
 
-  NetInfo.fetch().then((state) => {
+  NetInfo.fetch().then((state: any) => {
     if (!state.isConnected) {
       throw new Error(CONNECTION_ERROR);
     }
   });
-  const response = await axios.request({ ...config, timeout: 15000 });
+  const response = await axios.request({...config, timeout: 15000});
   if (response?.data?.data?.auth_token)
     userToken = response.data.data.auth_token;
   return response;

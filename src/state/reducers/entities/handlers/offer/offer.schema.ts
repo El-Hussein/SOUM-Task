@@ -1,10 +1,10 @@
-import { schema } from 'normalizr';
+import {schema} from 'normalizr';
 
 export const offerSchema = new schema.Entity(
   'offers',
   {},
   {
-    idAttribute: 'offer_id',
+    idAttribute: 'offerId',
   },
 );
 

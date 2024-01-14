@@ -1,20 +1,15 @@
-import { applyMiddleware, compose, createStore } from 'redux';
+import {
+  applyMiddleware,
+  compose,
+  legacy_createStore as createStore,
+} from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { all } from 'redux-saga/effects';
-import rootReducer from './combine-reducers';
-import { productSagas } from '../products/sagas';
-// eslint-disable-next-line import/no-cycle
-import { cartSagas } from '../cart/sagas';
-import { accountSagas } from '../account/sagas';
-import _rootSaga from '../state/sagas';
+import {all} from 'redux-saga/effects';
+import rootReducer from '../reducers/index';
+import _rootSaga from '../sagas/index';
 
 export function* rootSaga(getState) {
-  yield all([
-    productSagas(),
-    cartSagas(),
-    accountSagas(),
-    _rootSaga(), // root saga of new state
-  ]);
+  yield all([_rootSaga()]);
 }
 
 // Create the saga middleware
