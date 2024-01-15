@@ -1,7 +1,6 @@
 import {HTTP_REQUEST_STATE_ENUM, HomeCategoriesState} from '@app-types';
 import {createReducer} from '@utils/createReducer';
-import getHandlers from './homeCategoriesReducer.handlers';
-import selectHandlers from './selectHomeCategoryReducer.handlers';
+import handlers from './handlers';
 
 const initialState: HomeCategoriesState = {
   state: HTTP_REQUEST_STATE_ENUM.IDLE,
@@ -9,4 +8,4 @@ const initialState: HomeCategoriesState = {
   selectedCategoryId: 0,
 };
 
-export default createReducer(initialState, {...getHandlers, ...selectHandlers});
+export default createReducer(initialState, handlers);
