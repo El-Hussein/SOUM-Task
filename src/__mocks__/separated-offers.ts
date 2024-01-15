@@ -2,7 +2,7 @@ import {Offer} from '@app-types';
 
 // offers for product iphone 15 with productId 1
 export const iphone15White128: Offer = {
-  id: 1,
+  offerId: 1,
   title: 'iPhone 15 White 128GB',
   price: 1000,
   productId: 1,
@@ -23,11 +23,11 @@ export const iphone15White128: Offer = {
   },
   in_cart: false,
   in_stock: true,
-  in_favorite: false,
+  in_favorite: true,
 };
 
 export const iphone15Black128: Offer = {
-  id: 2,
+  offerId: 2,
   title: 'iPhone 15 Black 128GB',
   price: 1000,
   productId: 1,
@@ -46,13 +46,13 @@ export const iphone15Black128: Offer = {
     discount_percentage: 10,
     discount_price: 900,
   },
-  in_cart: false,
+  in_cart: true,
   in_stock: true,
   in_favorite: false,
 };
 
 export const iphone15White256: Offer = {
-  id: 3,
+  offerId: 3,
   title: 'iPhone 15 White 256GB',
   price: 1100,
   productId: 1,
@@ -73,11 +73,11 @@ export const iphone15White256: Offer = {
   ],
   in_cart: false,
   in_stock: true,
-  in_favorite: false,
+  in_favorite: true,
 };
 
 export const iphone15Black256: Offer = {
-  id: 4,
+  offerId: 4,
   title: 'iPhone 15 Black 256GB',
   price: 1100,
   productId: 1,
@@ -102,7 +102,7 @@ export const iphone15Black256: Offer = {
 };
 
 export const iphone15Rose256: Offer = {
-  id: 5,
+  offerId: 5,
   title: 'iPhone 15 Rose 256GB',
   price: 1200,
   productId: 1,
@@ -120,7 +120,7 @@ export const iphone15Rose256: Offer = {
     {camera: '12MP'},
     {battery: '4000mAh'},
   ],
-  in_cart: false,
+  in_cart: true,
   in_stock: true,
   in_favorite: false,
 };
@@ -128,7 +128,7 @@ export const iphone15Rose256: Offer = {
 // offers for product iphone 15 pro with productId 2
 
 export const iphone15ProWhite128: Offer = {
-  id: 6,
+  offerId: 6,
   title: 'iPhone 15 Pro White 128GB',
   price: 1200,
   productId: 2,
@@ -153,7 +153,7 @@ export const iphone15ProWhite128: Offer = {
 };
 
 export const iphone15ProBlack128: Offer = {
-  id: 7,
+  offerId: 7,
   title: 'iPhone 15 Pro Black 128GB',
   price: 1200,
   productId: 2,
@@ -180,7 +180,7 @@ export const iphone15ProBlack128: Offer = {
 // offers for product iphone 15 pro max with productId 3
 
 export const iphone15ProMaxWhite128: Offer = {
-  id: 8,
+  offerId: 8,
   title: 'iPhone 15 Pro Max White 128GB',
   price: 1200,
   productId: 3,
@@ -201,13 +201,13 @@ export const iphone15ProMaxWhite128: Offer = {
   ],
   in_cart: false,
   in_stock: true,
-  in_favorite: false,
+  in_favorite: true,
 };
 
 // offers for product samsung galaxy a52 with productId 4
 
 export const samsungGalaxyA52White128: Offer = {
-  id: 9,
+  offerId: 9,
   title: 'Samsung Galaxy A52 White 128GB',
   price: 1200,
   productId: 4,
@@ -233,7 +233,7 @@ export const samsungGalaxyA52White128: Offer = {
 // offers for product samsung galaxy a72 with productId 5
 
 export const samsungGalaxyA72White128: Offer = {
-  id: 10,
+  offerId: 10,
   title: 'Samsung Galaxy A72 White 128GB',
   price: 1200,
   productId: 5,
@@ -251,7 +251,7 @@ export const samsungGalaxyA72White128: Offer = {
     {camera: '12MP'},
     {battery: '4000mAh'},
   ],
-  in_cart: false,
+  in_cart: true,
   in_stock: true,
   in_favorite: false,
 };
@@ -259,7 +259,7 @@ export const samsungGalaxyA72White128: Offer = {
 // offers for product xiaomi redmi note 10 with productId 6
 
 export const xiaomiRedmiNote10Blue128: Offer = {
-  id: 11,
+  offerId: 11,
   title: 'Xiaomi Redmi Note 10 Blue 128GB',
   price: 1200,
   productId: 6,
@@ -296,7 +296,7 @@ export const xiaomiRedmiNote10Blue128: Offer = {
 // offers for product hp zbook with productId 11
 
 export const hpZBook1516: Offer = {
-  id: 12,
+  offerId: 12,
   title: 'HP ZBook 15 16GB 256SSD',
   price: 1200,
   productId: 11,
@@ -324,7 +324,7 @@ export const hpZBook1516: Offer = {
 // offers for product dell inspiron with productId 13
 
 export const dellInspiron1516: Offer = {
-  id: 13,
+  offerId: 13,
   title: 'Dell Inspiron 15 16GB 256SSD',
   price: 1200,
   productId: 13,
@@ -356,7 +356,7 @@ export const dellInspiron1516: Offer = {
 // offers for product lg oled with productId 16
 
 export const lgOLED55: Offer = {
-  id: 14,
+  offerId: 14,
   title: 'LG OLED 4K 55 inch',
   price: 1200,
   productId: 16,
@@ -370,11 +370,11 @@ export const lgOLED55: Offer = {
   specs: [{size: '55 inch'}],
   in_cart: false,
   in_stock: false,
-  in_favorite: false,
+  in_favorite: true,
 };
 
 export const lgOLED65: Offer = {
-  id: 15,
+  offerId: 15,
   title: 'LG OLED 4K 65 inch',
   price: 1200,
   productId: 16,
@@ -401,7 +401,7 @@ export const lgOLED65: Offer = {
 // offers for product rolex submariner with productId 19
 
 export const rolexSubmariner: Offer = {
-  id: 16,
+  offerId: 16,
   title: 'Rolex Submariner',
   price: 1200,
   productId: 19,
@@ -422,7 +422,7 @@ export const rolexSubmariner: Offer = {
 // offers for product casio g-shock with productId 20
 
 export const casioGShock: Offer = {
-  id: 17,
+  offerId: 17,
   title: 'Casio G-Shock',
   price: 1200,
   productId: 20,

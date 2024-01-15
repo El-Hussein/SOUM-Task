@@ -1,4 +1,4 @@
-import {call, put, takeEvery} from 'redux-saga/effects';
+import {call, put, takeLatest} from 'redux-saga/effects';
 import {GET_HOME_OFFERS} from '@actions/ACTION_TYPES';
 import {getOffersAPI} from '@services';
 import {
@@ -14,12 +14,12 @@ import {
 } from '@app-types';
 
 function* getHomeOffers({payload}: GetHomeOffersActionData) {
-  const {productId} = payload;
+  const {productIds} = payload;
   yield put(getHomeOffersPending());
   try {
     const response: GetOffersHTTPSuccessResponse = yield call(
       getOffersAPI,
-      productId,
+      productIds,
     );
     yield put(getHomeOffersSuccess(response));
     yield put(onNewOffers(response.data));
@@ -30,5 +30,5 @@ function* getHomeOffers({payload}: GetHomeOffersActionData) {
 }
 
 export function* watchGetHomeOffers() {
-  yield takeEvery(GET_HOME_OFFERS.ACTION, getHomeOffers);
+  yield takeLatest(GET_HOME_OFFERS.ACTION, getHomeOffers);
 }

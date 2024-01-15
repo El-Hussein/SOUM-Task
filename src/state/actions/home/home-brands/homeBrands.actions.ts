@@ -3,9 +3,15 @@ import {
   GetHomeBrandsError,
   GetHomeBrandsSuccess,
   RegularReduxAction,
+  SetSelectedBrand,
 } from '@app-types';
 import {createActionHelper} from '@utils/action.helpers';
-import {GET_HOME_BRANDS} from './homeBrands.ACTION_TYPES';
+import {GET_HOME_BRANDS, SET_SELECTED_BRAND} from './homeBrands.ACTION_TYPES';
+
+export const setSelectedBrand: SetSelectedBrand = createActionHelper(
+  SET_SELECTED_BRAND,
+  'brandId',
+);
 
 export const getHomeBrands: GetHomeBrands = createActionHelper(
   GET_HOME_BRANDS.ACTION,

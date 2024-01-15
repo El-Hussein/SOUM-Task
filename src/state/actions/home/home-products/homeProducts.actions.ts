@@ -3,9 +3,22 @@ import {
   GetHomeProductsError,
   GetHomeProductsSuccess,
   RegularReduxAction,
+  SetSelectedProduct,
 } from '@app-types';
 import {createActionHelper} from '@utils/action.helpers';
-import {GET_HOME_PRODUCTS} from './homeProducts.ACTION_TYPES';
+import {
+  GET_HOME_PRODUCTS,
+  SELECT_ALL_PRODUCTS,
+  SET_SELECTED_PRODUCT,
+} from './homeProducts.ACTION_TYPES';
+
+export const selectAllProducts: RegularReduxAction =
+  createActionHelper(SELECT_ALL_PRODUCTS);
+
+export const setSelectedProduct: SetSelectedProduct = createActionHelper(
+  SET_SELECTED_PRODUCT,
+  'productId',
+);
 
 export const getHomeProducts: GetHomeProducts = createActionHelper(
   GET_HOME_PRODUCTS.ACTION,

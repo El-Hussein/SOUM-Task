@@ -1,15 +1,12 @@
-import React from 'react';
-import {render} from '@testing-library/react-native';
 import HomeScreen from './HomeScreen';
-// describe HomeScreen, it should render correctly and have a text of Home Screen
+import {renderWithStateAndNavigation} from '@utils/testingHelpers';
 
 describe('HomeScreen', () => {
-  it('should render correctly', () => {
-    const tree = render(<HomeScreen />);
-    expect(tree).toMatchSnapshot();
-  });
-  it('should have a text of Home Screen', () => {
-    const {getByText} = render(<HomeScreen />);
-    expect(getByText('Home Screen')).toBeTruthy();
+  it('should have 4 lists category list, brand list, product list, and offer list', () => {
+    const {getByTestId} = renderWithStateAndNavigation(<HomeScreen />);
+    expect(getByTestId('category-list')).toBeTruthy();
+    expect(getByTestId('brand-list')).toBeTruthy();
+    expect(getByTestId('product-list')).toBeTruthy();
+    expect(getByTestId('offer-list')).toBeTruthy();
   });
 });

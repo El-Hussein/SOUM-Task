@@ -15,6 +15,8 @@ export default {
   ) => {
     draftStart.state = HTTP_REQUEST_STATE_ENUM.SUCCESS;
     draftStart.brandIds = response.data.map(brand => brand.brandId);
+    draftStart.selectedBrandId =
+      draftStart.brandIds.length > 0 ? draftStart.brandIds[0] : 0;
   },
   [GET_HOME_BRANDS.ERROR]: (draftStart: HomeBrandsState) => {
     draftStart.state = HTTP_REQUEST_STATE_ENUM.FAILURE;

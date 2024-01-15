@@ -1,47 +1,33 @@
-// In App.js in a new project
-
-import {
-  getHomeBrands,
-  getHomeCategories,
-  getHomeOffers,
-  getHomeProducts,
-} from '@actions';
-import {
-  selectAllOffers,
-  selectBrands,
-  selectCategories,
-  selectProducts,
-} from '@selectors';
-import * as React from 'react';
-import {View, Text} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
+import {useCallback} from 'react';
+import BrandList from '@components/organisms/brands-list/BrandList';
+import CategoryList from '@components/organisms/category-list/CategoryList';
+import OfferList from '@components/organisms/offer-list/OfferList';
+import ProductList from '@components/organisms/product-list/ProductList';
+import {FlatList, View} from 'react-native';
 
 const HomeScreen = () => {
-  const dispatch = useDispatch();
-  const homeCategories = useSelector(selectCategories);
-  console.log('homeCategories', homeCategories);
-  const homeBrands = useSelector(selectBrands);
-  console.log('homeBrands', homeBrands);
-  const homeProducts = useSelector(selectProducts);
-  console.log('homeProducts', homeProducts);
-  const homeOffers = useSelector(selectAllOffers);
-  console.log('homeOffers', homeOffers);
-  React.useEffect(() => {
-    dispatch(getHomeCategories());
-    dispatch(getHomeBrands(1));
-    dispatch(getHomeProducts(1));
-    dispatch(getHomeOffers(1));
+  const sectionsData = [
+    {id: 'category-list', component: CategoryList},
+    {id: 'brand-list', component: BrandList},
+    {id: 'product-list', component: ProductList},
+    {id: 'offer-list', component: OfferList},
+  ];
+
+  const renderItem = useCallback(({item}: any) => {
+    const Component = item.component;
+    return (
+      <View testID={item.id}>
+        <Component />
+      </View>
+    );
   }, []);
+
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: 'red',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
-      <Text>Home Screen</Text>
-    </View>
+    <FlatList
+      data={sectionsData}
+      keyExtractor={item => item.id}
+      renderItem={renderItem}
+    />
   );
 };
 

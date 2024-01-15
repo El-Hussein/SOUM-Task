@@ -3,9 +3,18 @@ import {
   GetHomeCategoriesError,
   GetHomeCategoriesSuccess,
   RegularReduxAction,
+  SetSelectedCategory,
 } from '@app-types';
 import {createActionHelper} from '@utils/action.helpers';
-import {GET_HOME_CATEGORIES} from './homeCategories.ACTION_TYPES';
+import {
+  GET_HOME_CATEGORIES,
+  SET_SELECTED_CATEGORY,
+} from './homeCategories.ACTION_TYPES';
+
+export const setSelectedCategory: SetSelectedCategory = createActionHelper(
+  SET_SELECTED_CATEGORY,
+  'categoryId',
+);
 
 export const getHomeCategories: GetHomeCategories = createActionHelper(
   GET_HOME_CATEGORIES.ACTION,

@@ -7,7 +7,13 @@ const Stack = createNativeStackNavigator();
 function MainApp() {
   return (
     <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen
+        options={{
+          headerTitleAlign: 'center',
+        }}
+        name="Home"
+        component={HomeScreen}
+      />
       <Stack.Screen name="ProductDetails" component={HomeScreen} />
     </Stack.Navigator>
   );

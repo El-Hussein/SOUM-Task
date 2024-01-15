@@ -1,14 +1,27 @@
-import {Category} from '@app-types';
+import {Category, HTTP_REQUEST_STATE_ENUM} from '@app-types';
 import {RootState} from '@app-types/RootState';
+import {createSelector} from 'reselect';
 
-export const selectCategories = (state: RootState): Category[] => {
-  const allCategories = state.entities.categories;
-  const categoryIds = state.UI.home.categories.categoryIds;
-  const categories: Category[] = [];
-  categoryIds?.forEach(id => {
-    if (allCategories[id]) {
-      categories.push(allCategories[id]);
-    }
-  });
-  return categories;
-};
+export const selectCategories = createSelector(
+  (state: RootState) => state.entities.categories,
+  (state: RootState) => state.UI.home.categories.categoryIds,
+  (categories, categoryIds) => {
+    const categoriesArray: Category[] = [];
+    categoryIds?.forEach(id => {
+      if (categories[id]) {
+        categoriesArray.push(categories[id]);
+      }
+    });
+    return categoriesArray;
+  },
+);
+
+export const selectSelectedCategoryId = createSelector(
+  (state: RootState) => state.UI.home.categories.selectedCategoryId,
+  selectedCategoryId => selectedCategoryId,
+);
+
+export const selectLoadingCategories = createSelector(
+  (state: RootState) => state.UI.home.categories.state,
+  state => state === HTTP_REQUEST_STATE_ENUM.PENDING,
+);

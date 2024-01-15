@@ -6,11 +6,11 @@ import {
 export type GetHomeOffersActionData = {
   type: string;
   payload: {
-    productId: number;
+    productIds: number[];
   };
 };
 
-export type GetHomeOffers = (productId: number) => GetHomeOffersActionData;
+export type GetHomeOffers = (productIds: number[]) => GetHomeOffersActionData;
 
 export type GetHomeOffersError = (error: GetOffersHTTPErrorResponse) => {
   type: string;

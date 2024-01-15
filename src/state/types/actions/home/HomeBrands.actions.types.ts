@@ -3,6 +3,15 @@ import {
   GetBrandsHTTPSuccessResponse,
 } from '@app-types';
 
+export type SetSelectedBrandActionData = {
+  type: string;
+  payload: {
+    brandId: number;
+  };
+};
+
+export type SetSelectedBrand = (brandId: number) => SetSelectedBrandActionData;
+
 export type GetHomeBrandsActionData = {
   type: string;
   payload: {

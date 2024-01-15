@@ -9,7 +9,7 @@ import {GET_HOME_OFFERS} from './homeOffers.ACTION_TYPES';
 
 export const getHomeOffers: GetHomeOffers = createActionHelper(
   GET_HOME_OFFERS.ACTION,
-  'productId',
+  'productIds',
 );
 
 export const getHomeOffersPending: RegularReduxAction = createActionHelper(
