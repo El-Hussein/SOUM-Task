@@ -12,7 +12,7 @@ import {
   GetCategoriesHTTPSuccessResponse,
 } from '@app-types';
 
-function* getHomeCategories() {
+export function* getHomeCategories() {
   yield put(getHomeCategoriesPending());
   try {
     const response: GetCategoriesHTTPSuccessResponse = yield call(

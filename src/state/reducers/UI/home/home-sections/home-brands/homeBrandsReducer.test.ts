@@ -11,6 +11,7 @@ import {HTTP_REQUEST_STATE_ENUM} from '@app-types';
 import {appleBrand} from '@__mocks__/separated-brands';
 
 describe('homeBrandsReducer', () => {
+  it('empty test', () => {});
   describe('getHomeBrands', () => {
     it('should return initial state if we pass state as undefined to reducer', () => {
       const homeSectionListingState = homeBrandsReducer(undefined, {} as any);

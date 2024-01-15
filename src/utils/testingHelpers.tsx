@@ -30,7 +30,9 @@ export const renderWithNavigation = (component: React.ReactElement) => {
 
 export const renderWithStateAndNavigation = (
   component: React.ReactElement,
-  {initialState}: any = {},
+  {initialState}: {initialState: FakeRootState | undefined} = {
+    initialState: undefined,
+  },
 ) => {
   const store = configureStore(initialState);
   const ComponentWithStateAndNavigation = () => (

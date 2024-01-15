@@ -11,6 +11,7 @@ import {HTTP_REQUEST_STATE_ENUM} from '@app-types';
 import {phonesCategory} from '@__mocks__/separated-categories';
 
 describe('homeCategoriesReducer', () => {
+  it('empty test', () => {});
   describe('getHomeCategories', () => {
     it('should return initial state if we pass state as undefined to reducer', () => {
       const homeSectionListingState = homeCategoriesReducer(

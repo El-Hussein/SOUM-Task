@@ -13,7 +13,7 @@ import {
   GetHomeProductsActionData,
 } from '@app-types';
 
-function* getHomeProducts({payload}: GetHomeProductsActionData) {
+export function* getHomeProducts({payload}: GetHomeProductsActionData) {
   const {brandId} = payload;
   yield put(getHomeProductsPending());
   try {

@@ -13,6 +13,7 @@ import {HTTP_REQUEST_STATE_ENUM} from '@app-types';
 import {Iphone15, Iphone15Pro} from '@__mocks__/separated-products';
 
 describe('homeProductsReducer', () => {
+  it('empty test', () => {});
   describe('getHomeProducts', () => {
     it('should return initial state if we pass state as undefined to reducer', () => {
       const homeSectionListingState = homeProductsReducer(undefined, {} as any);

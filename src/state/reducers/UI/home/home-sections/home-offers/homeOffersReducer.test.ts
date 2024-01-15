@@ -10,6 +10,7 @@ import {HTTP_REQUEST_STATE_ENUM} from '@app-types';
 import {iphone15Black128} from '@__mocks__/separated-offers';
 
 describe('homeOffersReducer', () => {
+  it('empty test', () => {});
   describe('getHomeOffers', () => {
     it('should return initial state if we pass state as undefined to reducer', () => {
       const homeSectionListingState = homeOffersReducer(undefined, {} as any);
