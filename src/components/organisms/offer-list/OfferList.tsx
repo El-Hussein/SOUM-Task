@@ -14,6 +14,8 @@ const OfferList = () => {
     [],
   );
 
+  console.log('home offers', homeOffers);
+
   const keyExtractor = useCallback(
     (item: Offer) => item.offerId.toString(),
     [],
