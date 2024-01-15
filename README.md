@@ -5,8 +5,8 @@
 
 ### Demo (gif for android and for ios)
 
-![SOUM TASK](https://drive.google.com/file/d/1eIHAQss8C3M6XPp2AoH1vAJ34aoNwPHf/view?usp=sharing)
-
+![Android Demo](https://drive.google.com/file/d/1eIHAQss8C3M6XPp2AoH1vAJ34aoNwPHf/view?usp=sharing)
+![iOS Demo](https://drive.google.com/file/d/1HUbvT64TMkeinOZCSwxyL7CKItFexsjK/view?usp=sharing)
 
 ### Description
 
@@ -16,6 +16,12 @@ SOUM task is simply tree of e-commerce inventory with category, brand, product, 
 
 ```bash
 $ yarn
+```
+
+# extra step for ios
+
+```bash
+$ cd ios && pod install
 ```
 
 ### Running the app
@@ -30,3 +36,12 @@ $ yarn start
 # unit tests
 $ yarn test
 ```
+
+### used Packages
+
+- react-navigation
+- react-native-vector-icons
+- redux
+- react-redux
+- normalizer
+- @testing-library/react-native
