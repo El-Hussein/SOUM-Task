@@ -17,5 +17,5 @@ export interface GetOffersHTTPErrorResponse {
 }
 
 export type GetOffersAPI = (
-  productId: number,
+  productIds: number[],
 ) => Promise<GetOffersHTTPSuccessResponse | GetOffersHTTPErrorResponse>;

@@ -1,7 +1,17 @@
 import {Category} from '@app-types';
-import {Phones, Computers, TVs, Watches} from './separated-categories';
+import {
+  phonesCategory,
+  computersCategory,
+  tvsCategory,
+  watchesCategory,
+} from './separated-categories';
 
-export const categories: Category[] = [Phones, Computers, TVs, Watches];
+export const categories: Category[] = [
+  phonesCategory,
+  computersCategory,
+  tvsCategory,
+  watchesCategory,
+];
 
 export const getCategoriesAPIData = () => {
   return categories;

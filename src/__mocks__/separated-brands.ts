@@ -81,7 +81,7 @@ export const asusBrand: Brand = {
   categoryId: 2,
 };
 
-// TVs brands
+// tvsCategory brands
 export const lgTVBrand: Brand = {
   brandId: 12,
   name: 'LG',

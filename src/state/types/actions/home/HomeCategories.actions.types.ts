@@ -2,13 +2,22 @@ import {
   GetCategoriesHTTPErrorResponse,
   GetCategoriesHTTPSuccessResponse,
 } from '@app-types/services';
-import {Category} from '@app-types/state';
+
+export type SetSelectedCategoryActionData = {
+  type: string;
+  payload: {
+    categoryId: number;
+  };
+};
+
+export type SetSelectedCategory = (
+  categoryId: number,
+) => SetSelectedCategoryActionData;
 
 export type GetHomeCategoriesActionData = {
   type: string;
   payload: {};
 };
-
 export type GetHomeCategories = () => GetHomeCategoriesActionData;
 
 export type GetHomeCategoriesError = (

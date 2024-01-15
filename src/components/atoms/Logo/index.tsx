@@ -1,5 +1,4 @@
-import React from 'react';
-import { Image } from 'react-native';
+import {Image} from 'react-native';
 import styles from '@designSystem/styles';
 
 const Logo = () => {

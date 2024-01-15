@@ -9,3 +9,10 @@ export interface EntitiesState {
   offers: {[key: string]: Offer};
   products: {[key: string]: Product};
 }
+
+export interface FakeEntitiesState {
+  categories?: {[key: string]: Category};
+  brands?: {[key: string]: Brand};
+  offers?: {[key: string]: Offer};
+  products?: {[key: string]: Product};
+}

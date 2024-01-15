@@ -15,6 +15,8 @@ export default {
   ) => {
     draftStart.state = HTTP_REQUEST_STATE_ENUM.SUCCESS;
     draftStart.categoryIds = response.data.map(category => category.categoryId);
+    draftStart.selectedCategoryId =
+      draftStart.categoryIds.length > 0 ? draftStart.categoryIds[0] : 0;
   },
   [GET_HOME_CATEGORIES.ERROR]: (draftStart: HomeCategoriesState) => {
     draftStart.state = HTTP_REQUEST_STATE_ENUM.FAILURE;

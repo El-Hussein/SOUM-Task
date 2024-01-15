@@ -14,7 +14,9 @@ export default {
     {response}: {response: GetProductsHTTPSuccessResponse},
   ) => {
     draftStart.state = HTTP_REQUEST_STATE_ENUM.SUCCESS;
-    draftStart.productIds = response.data.map(product => product.id);
+    draftStart.productIds = response.data.map(product => product.productId);
+    draftStart.selectedProductIds =
+      draftStart.productIds.length > 0 ? [draftStart.productIds[0]] : [];
   },
   [GET_HOME_PRODUCTS.ERROR]: (draftStart: HomeProductsState) => {
     draftStart.state = HTTP_REQUEST_STATE_ENUM.FAILURE;

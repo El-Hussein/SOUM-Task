@@ -1,12 +1,6 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 import colors from './colors';
-import {
-  borders,
-  fontSizes,
-  lineHeights,
-  margins,
-  paddings,
-} from './constants';
+import {borders, fontSizes, lineHeights, margins, paddings} from './constants';
 
 const textStyles = StyleSheet.create({
   'text-h1': {
@@ -45,9 +39,14 @@ const textStyles = StyleSheet.create({
     lineHeight: lineHeights['lg'],
   },
   'text-subtitle2': {
-    fontSize: fontSizes['md'],
+    fontSize: fontSizes['sm'],
     fontWeight: 'normal',
-    lineHeight: lineHeights['md'],
+    lineHeight: lineHeights['sm'],
+  },
+  'text-subtitle3': {
+    fontSize: fontSizes['xs'],
+    fontWeight: 'normal',
+    lineHeight: lineHeights['xs'],
   },
   'text-normal': {
     fontSize: fontSizes['md'],
@@ -71,8 +70,17 @@ const textStyles = StyleSheet.create({
   'text-black': {
     color: colors['black'],
   },
+  'text-main': {
+    color: colors['main'],
+  },
+  'text-secondary': {
+    color: colors['secondary'],
+  },
   'text-white': {
     color: colors['white'],
+  },
+  'text-light': {
+    color: colors['light-black'],
   },
 });
 
@@ -97,6 +105,22 @@ const borderStyles = StyleSheet.create({
     borderWidth: borders.sm,
     borderColor: colors['error'],
   },
+  'border-gray': {
+    borderWidth: borders.sm,
+    borderColor: colors['gray-border'],
+  },
+  'rounded-sm': {
+    borderRadius: borders['radius-sm'],
+  },
+  'rounded-md': {
+    borderRadius: borders['radius-md'],
+  },
+  'rounded-lg': {
+    borderRadius: borders['radius-lg'],
+  },
+  'rounded-full': {
+    borderRadius: 99999,
+  },
 });
 
 const basicStyles = StyleSheet.create({
@@ -107,8 +131,7 @@ const basicStyles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    padding: paddings.md,
-    marginVertical: margins.md,
+    paddingHorizontal: paddings.md,
   },
 });
 
@@ -159,16 +182,43 @@ const containerStyles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'center',
   },
+  'row-container-center': {
+    ...basicStyles['container'],
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   'column-container': {
     ...basicStyles['container'],
     flexDirection: 'column',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+  'column-container-center': {
+    ...basicStyles['container'],
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   'wrap-content': {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
+  },
+  'flex-1': {
+    flex: 1,
+  },
+  'flex-2': {
+    flex: 2,
+  },
+  'flex-3': {
+    flex: 3,
+  },
+  'flex-4': {
+    flex: 4,
+  },
+  'flex-5': {
+    flex: 5,
   },
 });
 
@@ -539,17 +589,47 @@ const paddingsStyles = StyleSheet.create({
 });
 
 const width = StyleSheet.create({
+  'w-0': {
+    width: 0,
+  },
+  'w-1': {
+    width: 4,
+  },
+  'w-2': {
+    width: 8,
+  },
+  'w-3': {
+    width: 12,
+  },
+  'w-4': {
+    width: 16,
+  },
+  'w-5': {
+    width: 20,
+  },
   'w-xs': {
-    width: 100,
+    width: 30,
   },
   'w-sm': {
-    width: 150,
+    width: 50,
   },
   'w-md': {
-    width: 200,
+    width: 80,
   },
   'w-lg': {
+    width: 100,
+  },
+  'w-xl': {
+    width: 150,
+  },
+  'w-2xl': {
+    width: 200,
+  },
+  'w-3xl': {
     width: 250,
+  },
+  'w-4xl': {
+    width: 300,
   },
   'w-full': {
     width: '100%',
@@ -557,17 +637,47 @@ const width = StyleSheet.create({
 });
 
 const height = StyleSheet.create({
+  'h-0': {
+    height: 0,
+  },
+  'h-1': {
+    height: 4,
+  },
+  'h-2': {
+    height: 8,
+  },
+  'h-3': {
+    height: 12,
+  },
+  'h-4': {
+    height: 16,
+  },
+  'h-5': {
+    height: 20,
+  },
   'h-xs': {
-    height: 100,
+    height: 30,
   },
   'h-sm': {
-    height: 150,
+    height: 50,
   },
   'h-md': {
-    height: 200,
+    height: 80,
   },
   'h-lg': {
+    height: 100,
+  },
+  'h-xl': {
+    height: 150,
+  },
+  'h-2xl': {
+    height: 200,
+  },
+  'h-3xl': {
     height: 250,
+  },
+  'h-4xl': {
+    height: 300,
   },
   'h-full': {
     height: '100%',
@@ -577,6 +687,231 @@ const height = StyleSheet.create({
 const positioning = StyleSheet.create({
   absolute: {
     position: 'absolute',
+  },
+  relative: {
+    position: 'relative',
+  },
+  'top-0': {
+    top: 0,
+  },
+  'top-1': {
+    top: 4,
+  },
+  'top-2': {
+    top: 8,
+  },
+  'top-3': {
+    top: 12,
+  },
+  'top-4': {
+    top: 16,
+  },
+  'top-5': {
+    top: 20,
+  },
+  'top-xs': {
+    top: 30,
+  },
+  'top-sm': {
+    top: 50,
+  },
+  'top-md': {
+    top: 80,
+  },
+  'top-lg': {
+    top: 100,
+  },
+  'top-xl': {
+    top: 150,
+  },
+  'top-2xl': {
+    top: 200,
+  },
+  'top-3xl': {
+    top: 250,
+  },
+  'top-4xl': {
+    top: 300,
+  },
+  'top-full': {
+    top: '100%',
+  },
+  'bottom-0': {
+    bottom: 0,
+  },
+  'bottom-1': {
+    bottom: 4,
+  },
+  'bottom-2': {
+    bottom: 8,
+  },
+  'bottom-3': {
+    bottom: 12,
+  },
+  'bottom-4': {
+    bottom: 16,
+  },
+  'bottom-5': {
+    bottom: 20,
+  },
+  'bottom-xs': {
+    bottom: 30,
+  },
+  'bottom-sm': {
+    bottom: 50,
+  },
+  'bottom-md': {
+    bottom: 80,
+  },
+  'bottom-lg': {
+    bottom: 100,
+  },
+  'bottom-xl': {
+    bottom: 150,
+  },
+  'bottom-2xl': {
+    bottom: 200,
+  },
+  'bottom-3xl': {
+    bottom: 250,
+  },
+  'bottom-4xl': {
+    bottom: 300,
+  },
+  'bottom-full': {
+    bottom: '100%',
+  },
+  'left-0': {
+    left: 0,
+  },
+  'left-1': {
+    left: 4,
+  },
+  'left-2': {
+    left: 8,
+  },
+  'left-3': {
+    left: 12,
+  },
+  'left-4': {
+    left: 16,
+  },
+  'left-5': {
+    left: 20,
+  },
+  'left-xs': {
+    left: 30,
+  },
+  'left-sm': {
+    left: 50,
+  },
+  'left-md': {
+    left: 80,
+  },
+  'left-lg': {
+    left: 100,
+  },
+  'left-xl': {
+    left: 150,
+  },
+  'left-2xl': {
+    left: 200,
+  },
+  'left-3xl': {
+    left: 250,
+  },
+  'left-4xl': {
+    left: 300,
+  },
+  'left-full': {
+    left: '100%',
+  },
+  'right-0': {
+    right: 0,
+  },
+  'right-1': {
+    right: 4,
+  },
+  'right-2': {
+    right: 8,
+  },
+  'right-3': {
+    right: 12,
+  },
+  'right-4': {
+    right: 16,
+  },
+  'right-5': {
+    right: 20,
+  },
+  'right-xs': {
+    right: 30,
+  },
+  'right-sm': {
+    right: 50,
+  },
+  'right-md': {
+    right: 80,
+  },
+  'right-lg': {
+    right: 100,
+  },
+  'right-xl': {
+    right: 150,
+  },
+  'right-2xl': {
+    right: 200,
+  },
+  'right-3xl': {
+    right: 250,
+  },
+  'right-4xl': {
+    right: 300,
+  },
+  'right-full': {
+    right: '100%',
+  },
+  'z-0': {
+    zIndex: 0,
+  },
+  'z-1': {
+    zIndex: 1,
+  },
+  'z-2': {
+    zIndex: 2,
+  },
+  'z-3': {
+    zIndex: 3,
+  },
+  'z-4': {
+    zIndex: 4,
+  },
+  'z-5': {
+    zIndex: 5,
+  },
+  'z-top': {
+    zIndex: 9999,
+  },
+  'z-bottom': {
+    zIndex: -9999,
+  },
+});
+
+const backgroundColors = StyleSheet.create({
+  'bg-white': {
+    backgroundColor: colors.white,
+  },
+  'bg-black': {
+    backgroundColor: colors.black,
+  },
+  'bg-main': {
+    backgroundColor: colors.main,
+  },
+  'bg-secondary': {
+    backgroundColor: colors.secondary,
+  },
+  'bg-error': {
+    backgroundColor: colors.error,
   },
 });
 
@@ -590,4 +925,5 @@ export default StyleSheet.create({
   ...width,
   ...height,
   ...positioning,
+  ...backgroundColors,
 });

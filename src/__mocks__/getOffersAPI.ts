@@ -47,7 +47,7 @@ const RolexSubmarinerOffers: Offer[] = [rolexSubmariner];
 
 const CasioGShockOffers: Offer[] = [casioGShock];
 
-export const getOffersAPIData = (productId: number) => {
+const getOffersForProduct = (productId: number): Offer[] => {
   switch (productId) {
     case 1:
       return Iphone15Offers;
@@ -74,4 +74,13 @@ export const getOffersAPIData = (productId: number) => {
     default:
       return [];
   }
+};
+
+export const getOffersAPIData = (productIds: number[]) => {
+  const offers: Offer[] = [];
+  productIds.forEach(productId => {
+    const offersForProduct = getOffersForProduct(productId);
+    offers.push(...offersForProduct);
+  });
+  return offers;
 };

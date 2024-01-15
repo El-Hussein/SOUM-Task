@@ -1,4 +1,4 @@
-import {call, put, takeEvery} from 'redux-saga/effects';
+import {call, put, takeLatest} from 'redux-saga/effects';
 import {GET_HOME_CATEGORIES} from '@actions/ACTION_TYPES';
 import {getCategoriesAPI} from '@services';
 import {
@@ -27,5 +27,5 @@ function* getHomeCategories() {
 }
 
 export function* watchGetHomeCategories() {
-  yield takeEvery(GET_HOME_CATEGORIES.ACTION, getHomeCategories);
+  yield takeLatest(GET_HOME_CATEGORIES.ACTION, getHomeCategories);
 }

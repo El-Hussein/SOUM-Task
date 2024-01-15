@@ -1,11 +1,10 @@
+import {FakeRootState} from '@app-types/RootState';
 import {NavigationContainer} from '@react-navigation/native';
 import {render} from '@testing-library/react-native';
-import React from 'react';
 import {Provider} from 'react-redux';
 import {Action} from 'redux';
 import {runSaga} from 'redux-saga';
-import store, { configureStore } from '../store';
-import { FakeRootState } from '../types';
+import {configureStore} from '../state/store';
 
 export async function customRunSaga<T>(
   fakeState: FakeRootState,
@@ -35,9 +34,7 @@ export const renderWithStateAndNavigation = (
 ) => {
   const store = configureStore(initialState);
   const ComponentWithStateAndNavigation = () => (
-    <Provider store={store}>
-      <NavigationContainer>{component}</NavigationContainer>
-    </Provider>
+    <Provider store={store}>{component}</Provider>
   );
   return render(<ComponentWithStateAndNavigation />);
 };

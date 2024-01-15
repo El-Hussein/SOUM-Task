@@ -3,6 +3,17 @@ import {
   GetProductsHTTPSuccessResponse,
 } from '@app-types/services';
 
+export type SetSelectedProductActionData = {
+  type: string;
+  payload: {
+    productId: number;
+  };
+};
+
+export type SetSelectedProduct = (
+  productId: number,
+) => SetSelectedProductActionData;
+
 export type GetHomeProductsActionData = {
   type: string;
   payload: {

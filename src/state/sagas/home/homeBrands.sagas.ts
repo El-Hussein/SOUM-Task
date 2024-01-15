@@ -1,4 +1,4 @@
-import {call, put, takeEvery} from 'redux-saga/effects';
+import {call, put, takeLatest} from 'redux-saga/effects';
 import {GET_HOME_BRANDS} from '@actions/ACTION_TYPES';
 import {getBrandsAPI} from '@services';
 import {
@@ -30,5 +30,5 @@ function* getHomeBrands({payload}: GetHomeBrandsActionData) {
 }
 
 export function* watchGetHomeBrands() {
-  yield takeEvery(GET_HOME_BRANDS.ACTION, getHomeBrands);
+  yield takeLatest(GET_HOME_BRANDS.ACTION, getHomeBrands);
 }

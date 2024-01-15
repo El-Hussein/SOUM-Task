@@ -1,7 +1,7 @@
 import {Category} from '@app-types';
 
 // category phones with id: 1
-export const Phones: Category = {
+export const phonesCategory: Category = {
   categoryId: 1,
   name: 'Phones',
   image:
@@ -9,15 +9,15 @@ export const Phones: Category = {
 };
 
 // category computers with id: 2
-export const Computers: Category = {
+export const computersCategory: Category = {
   categoryId: 2,
   name: 'Computers',
   image:
     'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/page/category/desktop/dbcs-255750-aio-desktop-optiplex-7410-keyboard-mouse-km7321w-inspiron-27-7710-km5221w-800x620.png?fmt=png-alpha&wid=800&hei=620',
 };
 
-// category TVs with id: 3
-export const TVs: Category = {
+// category tvsCategory with id: 3
+export const tvsCategory: Category = {
   categoryId: 3,
   name: 'TVs',
   image:
@@ -25,7 +25,7 @@ export const TVs: Category = {
 };
 
 // category watches with id: 4
-export const Watches: Category = {
+export const watchesCategory: Category = {
   categoryId: 4,
   name: 'Watches',
   image:
